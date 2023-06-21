@@ -1,0 +1,47 @@
+############################################################################################################
+# Car section
+############################################################################################################
+GET http://localhost:3000/Inventory
+# GET http://localhost:3000/Inventory/64936a5262804f8bca9213b0
+
+POST http://localhost:3000/Inventory HTTP/1.1
+content-type: application/json
+
+{
+    "Lambo": "Aventador",
+    "Price": "100000",
+    "Color": "Black"
+}
+
+PUT http://localhost:3000/Inventory/64936a5262804f8bca9213b0 HTTP/1.1
+content-type: application/json
+
+{
+    "Civic": "10",
+    "Price": "3000",
+    "Color": "White"
+} 
+
+DELETE http://localhost:3000/Inventory/ HTTP/1.1
+
+############################################################################################################
+# Motorcycle section
+############################################################################################################
+GET http://localhost:3000/Motorcycle
+
+POST http://localhost:3000/Motorcycle HTTP/1.1
+content-type: application/json
+
+{
+    "Harley": "Davidson",
+    "Color": "Black"
+}
+
+PUT http://localhost:3000/Motorcycle/64936b2162804f8bca9213b3 HTTP/1.1
+
+{
+    "Kawasaki": "5",
+    "Color": "Green"
+}
+
+DELETE http://localhost:3000/Motorcycle/649381879c1da02579d787a3 HTTP/1.1
