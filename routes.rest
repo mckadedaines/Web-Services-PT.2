@@ -17,12 +17,12 @@ PUT http://localhost:3000/Inventory/64936a5262804f8bca9213b0 HTTP/1.1
 content-type: application/json
 
 {
-    "Civic": "5",
-    "Price": "5000",
-    "Color": "Blue"
+    "Civic": "10",
+    "Price": "8000",
+    "Color": "White"
 } 
 
-DELETE http://localhost:3000/Inventory/ HTTP/1.1
+DELETE http://localhost:3000/Inventory/64974fc7c4e37d6246eb38ea HTTP/1.1
 
 ############################################################################################################
 # Motorcycle section
@@ -41,7 +41,7 @@ PUT http://localhost:3000/Motorcycle/64936b2162804f8bca9213b3 HTTP/1.1
 
 {
     "Kawasaki": "5",
-    "Color": "Green"
+    "Color": "Green, Black, Blue, White"
 }
 
-DELETE http://localhost:3000/Motorcycle/ HTTP/1.1
+DELETE http://localhost:3000/Motorcycle/64975050c4e37d6246eb38eb HTTP/1.1
