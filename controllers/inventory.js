@@ -26,10 +26,10 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createInventory = async (req, res) => {
+const createCar = async (req, res) => {
   const contact = {
-    Civic: req.body.Civic,
-    Price: req.body.Price,
+    Car: req.body.Car,
+    Stock: req.body.Stock,
     Color: req.body.Color,
   };
   const response = await mongodb
@@ -46,11 +46,131 @@ const createInventory = async (req, res) => {
   }
 };
 
-const updateInventory = async (req, res) => {
+const createTruck = async (req, res) => {
+  const contact = {
+    Truck: req.body.Truck,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res
+      .status(500)
+      .json(response.error || "An error occurred creating contact.");
+  }
+};
+
+const createSuv = async (req, res) => {
+  const contact = {
+    SUV: req.body.SUV,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res
+      .status(500)
+      .json(response.error || "An error occurred creating contact.");
+  }
+};
+
+const createElectric = async (req, res) => {
+  const contact = {
+    Electric: req.body.Electric,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res
+      .status(500)
+      .json(response.error || "An error occurred creating contact.");
+  }
+};
+
+const updateCar = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const contact = {
-    Civic: req.body.Civic,
-    Price: req.body.Price,
+    Car: req.body.Car,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || "Error occurred updating contact.");
+  }
+};
+
+const updateTruck = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const contact = {
+    Truck: req.body.Truck,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || "Error occurred updating contact.");
+  }
+};
+
+const updateSuv = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const contact = {
+    SUV: req.body.SUV,
+    Stock: req.body.Stock,
+    Color: req.body.Color,
+  };
+  const response = await mongodb
+    .getDb()
+    .db("Inventory")
+    .collection("Cars")
+    .replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || "Error occurred updating contact.");
+  }
+};
+
+const updateElectric = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const contact = {
+    Electric: req.body.Electric,
+    Stock: req.body.Stock,
     Color: req.body.Color,
   };
   const response = await mongodb
@@ -86,7 +206,13 @@ const deleteInventory = async (req, res) => {
 module.exports = {
   getAll,
   getSingle,
-  createInventory,
-  updateInventory,
+  createCar,
+  createTruck,
+  createSuv,
+  createElectric,
+  updateCar,
+  updateTruck,
+  updateSuv,
+  updateElectric,
   deleteInventory,
 };

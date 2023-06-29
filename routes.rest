@@ -8,21 +8,21 @@ POST http://localhost:3000/Inventory HTTP/1.1
 content-type: application/json
 
 {
-    "Lambo": "Aventador",
-    "Price": "100000",
-    "Color": "Black"
+    "Hybrid": "Leaf, Prius, Volt",
+    "Stock": "3",
+    "Color": "Black, Blue, Grey"
 }
 
 PUT http://localhost:3000/Inventory/64936a5262804f8bca9213b0 HTTP/1.1
 content-type: application/json
 
 {
-    "Civic": "10",
-    "Price": "8000",
-    "Color": "White"
+    "Car": "Ferrari, Lamborghini, Porsche",
+    "Stock": "3",
+    "Color": "White, Blue, Yellow"
 } 
 
-DELETE http://localhost:3000/Inventory/64974fc7c4e37d6246eb38ea HTTP/1.1
+DELETE http://localhost:3000/Inventory/649cdf8fd44d272d29457de4 HTTP/1.1
 
 ############################################################################################################
 # Motorcycle section
@@ -38,10 +38,11 @@ content-type: application/json
 }
 
 PUT http://localhost:3000/Motorcycle/64936b2162804f8bca9213b3 HTTP/1.1
+content-type: application/json
 
 {
-    "Kawasaki": "5",
-    "Color": "Green, Black, Blue, White"
+    "Japanese_Bikes": "8",
+    "Color": "Green, Black, Blue"
 }
 
-DELETE http://localhost:3000/Motorcycle/64975050c4e37d6246eb38eb HTTP/1.1
+DELETE http://localhost:3000/Motorcycle/649ce154d44d272d29457de5 HTTP/1.1

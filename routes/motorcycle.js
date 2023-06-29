@@ -7,9 +7,17 @@ router.get("/", contactsController.getAll);
 
 router.get("/:id", contactsController.getSingle);
 
-router.post("/", contactsController.createMotorcycle);
+router.post("/", contactsController.createJapMotorcycle);
 
-router.put("/:id", contactsController.updateMotorcycle);
+router.post("/", contactsController.createItaMotorcycle);
+
+router.post("/", contactsController.createGermMotorcycle);
+
+router.put("/:id", contactsController.updateJapMotorcycle);
+
+router.put("/:id", contactsController.updateItaMotorcycle);
+
+router.put("/:id", contactsController.updateGermMotorcycle);
 
 router.delete("/:id", contactsController.deleteMotorcycle);
 

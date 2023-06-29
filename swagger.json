@@ -5,7 +5,7 @@
     "description": "API",
     "version": "1.0.0"
   },
-  "host": "web-service-pt-2.onrender.com/",
+  "host": "web-service-pt-2.onrender.com/motorcycles",
   "basePath": "/",
   "schemes": [
     "https"
@@ -33,34 +33,8 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Civic": {
-                  "example": "any"
-                },
-                "Price": {
-                  "example": "any"
-                },
-                "Color": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "parameters": [],
+        "responses": {}
       }
     },
     "/inventory/{id}": {
@@ -91,34 +65,9 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Civic": {
-                  "example": "any"
-                },
-                "Price": {
-                  "example": "any"
-                },
-                "Color": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "responses": {}
       },
       "delete": {
         "description": "",
@@ -155,31 +104,8 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Kawasaki": {
-                  "example": "any"
-                },
-                "Color": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "parameters": [],
+        "responses": {}
       }
     },
     "/motorcycle/{id}": {
@@ -210,31 +136,9 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Kawasaki": {
-                  "example": "any"
-                },
-                "Color": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "responses": {}
       },
       "delete": {
         "description": "",
